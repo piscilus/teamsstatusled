@@ -29,7 +29,7 @@ if __name__ == '__main__':
                         epilog='Text at the bottom of help')
     parser.add_argument('-i', '--interval',
                         type=int,
-                        default=1,
+                        default=5,
                         help="Interval in seconds to check state (default: 5)")
     parser.add_argument('-v', '--verbose',
                         action='store_true')
@@ -71,9 +71,7 @@ if __name__ == '__main__':
                 if current_color != color:
                     bstick.set_color(channel=0, index=1, hex=color)
                     current_color = color
-                    print("change to ", color)
-                else:
-                    print("nop")
+                    print("Changing LED to: ", color)
             sleep(args.interval)
     except FileNotFoundError:
         print("Error: File not found: %s." % path)

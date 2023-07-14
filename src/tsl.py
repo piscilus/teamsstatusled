@@ -53,7 +53,7 @@ if __name__ == '__main__':
     bstick.set_mode(0)
     current_color = bstick.get_color(0, "hex")
 
-    path = os.path.join(os.getenv('APPDATA'), "Microsoft", "Teams", "log.txt")
+    path = os.path.join(os.getenv('APPDATA'), "Microsoft", "Teams", "logs.txt")
     try:
         while True:
             state = "Offline"

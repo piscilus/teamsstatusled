@@ -38,11 +38,14 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     state_colors = {"Offline"       : "#000000",
-                    "Available"     : "#00FF00",
-                    "Busy"          : "#FF7500",
-                    "DoNotDisturb"  : "#FF0000",
-                    "Away"          : "#FFFF00",
-                    "BeRightBack"   : "#0000FF"}
+                    "Available"     : "#225500",
+                    "Away"          : "#555500",
+                    "BeRightBack"   : "#553333",
+                    "Presenting"    : "#550000",
+                    "DoNotDisturb"  : "#550000",
+                    "Busy"          : "#552500",
+                    "OnThePhone"    : "#552500",
+                    "InAMeeting"    : "#552500"}
 
     bstick = blinkstick.find_first()
     if bstick == None:

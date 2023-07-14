@@ -69,7 +69,8 @@ if __name__ == '__main__':
                 except KeyError:
                     color = state_colors["Offline"]
                 if current_color != color:
-                    bstick.set_color(channel=0, index=1, hex=color)
+                    for i in range(1, 8, 2):
+                        bstick.set_color(channel=0, index=i, hex=color)
                     current_color = color
                     print("Changing LED to: ", color)
             sleep(args.interval)
@@ -78,5 +79,6 @@ if __name__ == '__main__':
         sys.exit(1)
     except KeyboardInterrupt:
         pass
-    bstick.set_color(channel=0, index=1, hex=state_colors["Offline"])
+    for i in range(1, 8, 2):
+        bstick.set_color(channel=0, index=i, hex=state_colors["Offline"])
     sys.exit(0)

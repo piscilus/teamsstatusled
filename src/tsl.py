@@ -39,11 +39,11 @@ if __name__ == '__main__':
 
     state_colors = {"Offline"       : "#000000",
                     "Available"     : "#225500",
+                    "Busy"          : "#552500",
+                    "DoNotDisturb"  : "#550000",
                     "Away"          : "#555500",
                     "BeRightBack"   : "#553333",
                     "Presenting"    : "#550000",
-                    "DoNotDisturb"  : "#550000",
-                    "Busy"          : "#552500",
                     "OnThePhone"    : "#552500",
                     "InAMeeting"    : "#552500"}
 
@@ -64,8 +64,9 @@ if __name__ == '__main__':
                 for line in frb:
                     match = re.search(r'StatusIndicatorStateService: Added\s+(\w+)', line)
                     if match:
-                        state = match.group(1)
-                        break
+                        if match.group(1) != "NewActivity":
+                            state = match.group(1)
+                            break
             with contextlib.redirect_stdout(None) if not args.verbose else contextlib.nullcontext():
                 try:
                     color = state_colors[state]

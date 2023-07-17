@@ -38,3 +38,8 @@ A regular expression is used to extract the state.
   - <https://pypi.org/project/BlinkStick310/1.0.1/>
 - file_read_backwards
   - <https://pypi.org/project/file-read-backwards/>
+
+## Known Issues
+
+- It seems that MS Teams switches from a manually set "BeRightBack" to "Away"
+  after some time. RGB-LED should probably still show "BeRightBack".
